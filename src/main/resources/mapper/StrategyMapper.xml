@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.baby.tt.dao.StrategyDao">
+
+    <sql id="whereTitle">
+        FROM strategy
+        <where>
+            <if test="title!=null and title!=''">
+                title LIKE CONCAT('%',#{title},'%')
+            </if>
+        </where>
+    </sql>
+
+    <select id="findRowCount" resultType="long">
+        SELECT COUNT(*)
+        <include refid="whereTitle"></include>
+    </select>
+
+    <select id="findStrategyListObjects" resultType="com.baby.tt.common.po.Strategy">
+        SELECT *
+        <include refid="whereTitle"></include>
+        ORDER BY createdTime DESC
+        LIMIT #{startIndex},#{pageSize}
+    </select>
+
+</mapper>

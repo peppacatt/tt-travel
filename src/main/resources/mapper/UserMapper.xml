@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.baby.tt.dao.UserDao">
-    <select id="selectUserById" resultType="User" parameterType="int">
-        SELECT * from tab_user where id = #{id}
-    </select>
-    <select id="selectUserByName" resultType="User" parameterType="String">
-        SELECT * from tab_user where username = #{username}
-    </select>
-    <insert id="insertUser" parameterType="User">
-        insert into tab_user(username,password,name,birthday,sex,telephone,email,code)
-        values(#{username},#{password},#{name},#{birthday},#{sex},#{telephone},#{email},#{code})
-    </insert>
+<!--    <select id="selectUserById" resultType="User" parameterType="int">-->
+<!--        SELECT * from tab_user where id = #{id}-->
+<!--    </select>-->
+<!--    <select id="selectUserByName" resultType="User" parameterType="String">-->
+<!--        SELECT * from tab_user where username = #{username}-->
+<!--    </select>-->
+<!--    <insert id="insertUser" parameterType="User">-->
+<!--        insert into tab_user(username,password,name,birthday,sex,telephone,email,code)-->
+<!--        values(#{username},#{password},#{name},#{birthday},#{sex},#{telephone},#{email},#{code})-->
+<!--    </insert>-->
 </mapper>
