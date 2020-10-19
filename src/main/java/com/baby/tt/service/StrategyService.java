@@ -7,4 +7,5 @@ public interface StrategyService {
 
     PageObject<Strategy> findStrategyListObjects(String title, Long pageCurrent);
 
+    Strategy findStrategyById(Long id);
 }

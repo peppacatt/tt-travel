@@ -25,4 +25,10 @@
         LIMIT #{startIndex},#{pageSize}
     </select>
 
+    <select id="findStrategyById" resultType="com.baby.tt.common.po.Strategy">
+        SELECT *
+        FROM strategy
+        WHERE id=#{id}
+    </select>
+
 </mapper>

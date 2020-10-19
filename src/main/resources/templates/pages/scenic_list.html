@@ -10,40 +10,21 @@
     <link rel="stylesheet" href="css/search.css">
     <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
 <!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">-->
-
-<!--    <style>
-        .imgSize{
-            width: auto;
-            height: auto;
-            max-width: 100%;
-            max-height: 100%;
-        }
-    </style>-->
 </head>
 <body>
 <!--引入头部-->
 <div id="header"></div>
 <div class="page_one">
     <div class="contant">
-        <form class="form-inline">
-            <div class="form-group">
-                <div class="input-group">
-                    <div class="input-group-addon">攻略</div>
-                    <input type="text" class="form-control" id="searchNameId" placeholder="输入文章标题查询">
-                    <div class="input-group-addon">游记</div>
-                </div>
-            </div>
-            <button type="submit" class="btn btn-primary">搜索</button>
-        </form>
-        <div class="crumbs">
-            <img src="images/search.png" alt="">
-            <p>攻略游记><span>搜索结果</span></p>
-        </div>
+<!--        <div class="crumbs">-->
+<!--            <img src="images/search.png" alt="">-->
+<!--            <p>热门景区><span>搜索结果</span></p>-->
+<!--        </div>-->
         <div class="xinxi clearfix">
             <div class="left">
                 <div class="header">
-                    <span>文章列表</span>
-                    <span class="jg">详情</span>
+                    <span>热门景区列表</span>
+                    <span class="jg">详情信息</span>
                 </div>
                 <ul id="tbodyId">
                     <li>
@@ -226,7 +207,7 @@
     function doGetObjects(){
         // $("#checkAll").prop("checked",false);//每次查询将全选按钮的状态设置为false
         //1.请求url
-        let url="strategy/findStrategyListObjects";
+        let url="scenic/findScenicListObjects";
         //2.请求参数
         let pageCurrent=$("#pageId").data("pageCurrent");
         if(!pageCurrent)pageCurrent=1;//默认值
@@ -277,21 +258,19 @@
             return `<li>
                         <div class="img imgSize"><img src="${item.imgurl}" style="width: 100%;height: 100%" alt=""></div>
                         <div class="text1">
-                            <p>${item.title}</p>
                             <br/>
-                            <p>${item.detail}</p>
+                            <br/>
+                            <p>${item.title}</p>
+<!--                            <p>${item.detail}</p>-->
                         </div>
                         <div class="price">
-                            <p class="price_num">
+                            <p class="price_num" style="color: red">
 <!--                                <span>&yen;</span>-->
-                                <span>作者:</span>
-                                <span style="display: none">${item.id}</span>
-                                <span>${item.author}</span>
+                                <span>热度排行:</span>
+                                <span>${item.id}</span>
 <!--                                <span>起</span>-->
                             </p>
-<!--                            <p><a href="strategy_detail">查看详情</a></p>-->
-<!--                            <p><a th:href="@{/strategy/findStrategyById/(id=${item.id})}">查看详情</a></p>-->
-                            <p><a href="@{/strategy/findStrategyById/(id=${item.id})}">view</a></p>
+                            <p><a href="strategy_detail">查看详情</a></p>
                         </div>
                     </li>`
     }

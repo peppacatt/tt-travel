@@ -104,8 +104,8 @@ a {
 
 .page_one .xinxi .left > ul li .price .price_num {
     line-height: 1;
-    font-size: 30px;
-    color: #ff4848;
+    font-size: 17px;
+    color: rgb(244,136,0);
 }
 
 .page_one .xinxi .left > ul li .price .price_num span:nth-of-type(3) {

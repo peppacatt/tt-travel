@@ -26,4 +26,10 @@ public class StrategyServiceImpl implements StrategyService {
         List<Strategy> records = strategyDao.findStrategyListObjects(title, startIndex, pageSize);
         return new PageObject<>(pageSize, records, pageCurrent, rowCount);
     }
+
+    @Override
+    public Strategy findStrategyById(Long id) {
+        if(id==null||id<1) throw new IllegalArgumentException("参数不合法");
+        return strategyDao.findStrategyById(id);
+    }
 }

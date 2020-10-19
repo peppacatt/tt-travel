@@ -12,4 +12,5 @@ public interface StrategyDao {
 
     List<Strategy> findStrategyListObjects(String title, long startIndex, int pageSize);
 
+    Strategy findStrategyById(Long id);
 }
